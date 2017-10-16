@@ -9,7 +9,8 @@ import facebook
 import json
 
 
-graph = facebook.GraphAPI(access_token='EAACEdEose0cBAJpZCS5i8UHMFAu3dZBZAqYdnRF8s0zuxpofltKuGDbprjxu4dMoNtSzpzRv5jIhvK2C7atV7A8Btq4Fbyqt6zE4osfb1zgod8ykk67YNcOnbhjgIfqdUhrSQUFXCLu7AjXkdqdcStVCRKVUN76PaNm8zD0H7ZAwIw6pBjkROXZCkX94EQEkZD', version=2.10)
+graph = facebook.GraphAPI(access_token='', version=2.10)
+#new token, "https://developers.facebook.com/tools/explorer/145634995501895/?method=GET&path=28963119862%3Ffields%3Dposts.limit(100)&version=v2.10"
 
 def saveFile(filesuffix, content):
     fp = open(filesuffix + "RANK6" ".json", 'w+')
@@ -19,7 +20,7 @@ def saveFile(filesuffix, content):
 
 Rank = graph.get_object(id="28963119862",fields='category,talking_about_count,rating_count,fan_count,name,id')
 print(Rank)
-name = Rank['name']
+name = Rank['name'].replace(" ","")
 print(name)
 saveFile(name,Rank)
 
