@@ -17,7 +17,7 @@ def saveFile(filesuffix, content):
     fp.close()
 
 
-Rank = graph.get_object(id="28963119862",fields='category,talking_about_count,rating_count,name,id')
+Rank = graph.get_object(id="28963119862",fields='category,talking_about_count,rating_count,fan_count,name,id')
 print(Rank)
 name = Rank['name']
 print(name)
